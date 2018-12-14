@@ -1,15 +1,19 @@
 
 
 object Main extends App {
-  val cat2 = Cat("Fabian", 6)
+  val cat2 = Cat("Egil", "british shorthair")
   cat2.print
 
+  Dog("Voffe", true).bite
+
   object Cat {
+    private val privateThingy: String = "this is private!"
+
     def apply(name: String, breed: String): Cat = {
       breed match {
         case "british shorthair" => new BritishShorthair(name)
         case "siamese" => new CMS(name)
-        _ => new Cat(name)
+        case _ => new Cat(name)
       }
     }
   }
