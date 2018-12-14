@@ -1,12 +1,25 @@
 
 
 object Main extends App {
+  val cat2 = Cat("Fabian", 6)
+  cat2.print
+
+  object Cat {
+    def apply(name: String, breed: String): Cat = {
+      breed match {
+        case "british shorthair" => new BritishShorthair(name)
+        case "siamese" => new CMS(name)
+        _ => new Cat(name)
+      }
+    }
+  }
+
   //tests()
   //noArgs
 
-  printOst(1)
-  println("HEJ")
-  printOst()
+  //printOst(1)
+  //println("HEJ")
+  //printOst()
 
 
   // Pure function with no args
